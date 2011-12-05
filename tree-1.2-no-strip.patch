@@ -1,0 +1,12 @@
+diff -up tree-1.5.3/Makefile.no-strip tree-1.5.3/Makefile
+--- tree-1.5.3/Makefile.no-strip	2009-10-19 19:56:28.000000000 +0100
++++ tree-1.5.3/Makefile	2009-11-27 17:10:56.209696177 +0000
+@@ -86,7 +86,7 @@ install: tree
+ 	install -d $(BINDIR)
+ 	install -d $(MANDIR)
+ 	if [ -e $(TREE_DEST) ]; then \
+-		install -s $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
++		install $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
+ 	fi
+ 	install man/$(MAN) $(MANDIR)/$(MAN)
+ 

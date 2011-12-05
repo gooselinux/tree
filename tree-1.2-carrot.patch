@@ -1,0 +1,12 @@
+diff -up tree-1.5.2.1/man/tree.1.carrot tree-1.5.2.1/man/tree.1
+--- tree-1.5.2.1/man/tree.1.carrot	2008-06-04 16:35:31.000000000 +0100
++++ tree-1.5.2.1/man/tree.1	2008-09-02 15:05:28.000000000 +0100
+@@ -149,7 +149,7 @@ caret notation.
+ .PP
+ .TP
+ .B -N
+-Print non-printable characters as is instead of the default carrot notation.
++Print non-printable characters as is instead of the default caret notation.
+ .PP
+ .TP
+ .B -v

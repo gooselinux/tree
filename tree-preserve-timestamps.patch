@@ -1,0 +1,15 @@
+diff -up tree-1.5.1.1/Makefile.preserve-timestamps tree-1.5.1.1/Makefile
+--- tree-1.5.1.1/Makefile.preserve-timestamps	2008-04-25 12:30:41.000000000 +0100
++++ tree-1.5.1.1/Makefile	2008-04-25 12:31:14.000000000 +0100
+@@ -62,9 +62,9 @@ install:
+ 	install -d $(BINDIR)
+ 	install -d $(MANDIR)
+ 	if [ -e $(TREE_DEST) ]; then \
+-		install $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
++		install -p $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
+ 	fi
+-	install man/$(MAN) $(MANDIR)/$(MAN)
++	install -p man/$(MAN) $(MANDIR)/$(MAN)
+ 
+ distclean:
+ 	if [ -f tree.o ]; then rm *.o; fi

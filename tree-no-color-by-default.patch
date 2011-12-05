@@ -1,0 +1,28 @@
+diff -up tree-1.5.3/man/tree.1.no-color-by-default tree-1.5.3/man/tree.1
+--- tree-1.5.3/man/tree.1.no-color-by-default	2009-11-27 17:11:45.079696363 +0000
++++ tree-1.5.3/man/tree.1	2009-11-27 17:11:45.097697476 +0000
+@@ -25,8 +25,8 @@ tree \- list contents of directories in 
+ .br
+ .SH DESCRIPTION
+ \fITree\fP is a recursive directory listing program that produces a depth
+-indented listing of files, which is colorized ala \fIdircolors\fP if the \fBLS_COLORS\fP
+-environment variable is set and output is to tty.  With no arguments,
++indented listing of files.  Color is supported ala \fIdircolors\fP if the \fBLS_COLORS\fP
++environment variable is set, output is to a tty, and the \fB-C\fP flag is used.  With no arguments,
+ \fItree\fP lists the files in the current directory.  When directory
+ arguments are given, \fItree\fP lists all the files and/or directories found
+ in the given directories each in turn.  Upon completion of listing all
+diff -up tree-1.5.3/tree.c.no-color-by-default tree-1.5.3/tree.c
+--- tree-1.5.3/tree.c.no-color-by-default	2009-11-24 17:30:03.000000000 +0000
++++ tree-1.5.3/tree.c	2009-11-27 17:12:17.751822020 +0000
+@@ -207,8 +207,9 @@ int main(int argc, char **argv)
+   q = p = dtotal = ftotal = 0;
+   aflag = dflag = fflag = lflag = pflag = sflag = Fflag = uflag = gflag = FALSE;
+   Dflag = qflag = Nflag = Hflag = Rflag = hflag = FALSE;
+-  noindent = force_color = nocolor = xdev = noreport = nolinks = FALSE;
++  noindent = force_color = xdev = noreport = nolinks = FALSE;
+   inodeflag = devflag = FALSE;
++  nocolor = TRUE;
+   flimit = 0;
+   dirs = xmalloc(sizeof(int) * (maxdirs=4096));
+   memset(dirs, 0, sizeof(int) * maxdirs);
